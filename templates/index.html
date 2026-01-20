@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IT Help Desk</title>
+</head>
+<body>
+
+<h2>IT Support Ticket Form</h2>
+
+<form action="/submit" method="post">
+
+    <label>Your Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Problem Description:</label><br>
+    <textarea name="issue" required></textarea><br><br>
+
+    <label>Priority:</label><br>
+    <select name="priority">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select><br><br>
+
+    <button type="submit">Send Ticket</button>
+
+</form>
+
+</body>
+</html>
+

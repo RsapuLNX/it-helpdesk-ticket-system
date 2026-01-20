@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+
+<h2>All IT Tickets</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Issue</th>
+    <th>Priority</th>
+    <th>Status</th>
+</tr>
+
+{% for t in tickets %}
+<tr>
+    <td>{{ t[0] }}</td>
+    <td>{{ t[1] }}</td>
+    <td>{{ t[2] }}</td>
+    <td>{{ t[3] }}</td>
+    <td>{{ t[4] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
