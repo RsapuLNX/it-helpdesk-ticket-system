@@ -1,17 +1,19 @@
 import sqlite3
 
-db = sqlite3.connect("database.db")
+conn = sqlite3.connect('database.db')
+cursor = conn.cursor()
 
-db.execute("""
-CREATE TABLE tickets (
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS tickets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    issue TEXT,
-    priority TEXT,
-    status TEXT
+    subject TEXT NOT NULL,
+    description TEXT NOT NULL,
+    priority TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'Open',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
-""")
+''')
 
-db.close()
-
-print("Database created successfully")
+conn.commit()
+conn.close()
+print("Database and table created!")

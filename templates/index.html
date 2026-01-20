@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IT Help Desk</title>
+  <title>IT Help Desk - Submit Ticket</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
+<header>
+  <h1>IT Help Desk</h1>
+  <p>Submit your issue and we’ll help you ASAP!</p>
+</header>
+
+<div class="container">
+  <form action="/submit" method="post">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="issue">Describe your issue:</label>
+    <textarea id="issue" name="issue" rows="4" required></textarea>
+
+    <label for="priority">Priority:</label>
+    <select id="priority" name="priority" required>
+      <option value="Low">Low</option>
+      <option value="Medium" selected>Medium</option>
+      <option value="High">High</option>
+    </select>
+
+    <button type="submit">Submit Ticket</button>
+  </form>
+</div>
+
+</body>
 
 <h2>IT Support Ticket Form</h2>
 
